@@ -1,0 +1,13 @@
+@import 'theme';
+
+:export {
+  /* breakpoints */
+  brPhone: map_get($breakpoints, 'phone');
+  brPhoneWide: map_get($breakpoints, 'phone-wide');
+  brPhablet: map_get($breakpoints, 'phablet');
+  brTabletSmall: map_get($breakpoints, 'tablet-small');
+  brTablet: map_get($breakpoints, 'tablet');
+  brTabletWide: map_get($breakpoints, 'tablet-wide');
+  brDesktop: map_get($breakpoints, 'desktop');
+  brDesktopWide: map_get($breakpoints, 'desktop-wide');
+}

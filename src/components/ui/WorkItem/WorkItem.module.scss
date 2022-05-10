@@ -1,0 +1,68 @@
+@import '../../../mixins';
+
+.Container {
+  flex: 0 0 auto;
+  width: 400px;
+  height: 300px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+  @include mq('phablet', max) {
+    margin: auto;
+    width: 300px;
+    height: 250px;
+  }
+}
+
+.Item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    .OpacityFilter {
+      opacity: 1;
+    }
+    .Description {
+      height: 40%;
+      opacity: 0.8;
+    }
+  }
+
+  @include mq('phablet', max) {
+    margin: auto;
+  }
+}
+
+.OpacityFilter {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.4;
+  transition: 1.5s;
+}
+
+.Description {
+  width: 100%;
+  height: 15%;
+  position: absolute;
+  padding: 5px;
+  bottom: 0;
+  left: 0;
+  font-size: 30px;
+  color: black;
+  background-color: white;
+  opacity: 0.7;
+  transition: 0.8s;
+}
+
+.DetailedDesc {
+  font-size: 20px;
+}
+
+.Image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}

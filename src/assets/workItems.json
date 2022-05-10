@@ -1,0 +1,6 @@
+[
+    { "id": "0", "name": "Prvo delo", "shortDesc": "zelo zanimiv opis dela", "src": "./1.png", "status": "Finished", "longDesc": "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah" },
+    { "id": "1", "name": "Drugo delo", "shortDesc": "to je res dolgi opis", "src": "./2.png", "status": "In progress", "longDesc": "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah" },
+    { "id": "2", "name": "Tretjo delo", "shortDesc": "podroben opis slike", "src": "./3.png", "status": "Canceled", "longDesc": "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah" },
+    { "id": "3", "name": "Cetrto delo", "shortDesc": "informacije", "src": "./4.png", "status": "Canceled", "longDesc": "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah" }
+]

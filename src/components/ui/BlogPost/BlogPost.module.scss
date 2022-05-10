@@ -1,0 +1,24 @@
+.Container {
+  margin: 20px 0 10px 20px;
+  & > p {
+    margin-top: 10px;
+  }
+  & > .Chip {
+    margin-right: 10px;
+  }
+
+  & > .Title {
+    display: flex;
+    & > .Inline {
+      display: inline;
+      color: var(--text-primary);
+    }
+    & > .Icon {
+      font-size: 30px;
+      margin: auto auto 10px 5px;
+      & > :hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

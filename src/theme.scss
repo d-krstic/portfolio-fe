@@ -1,0 +1,17 @@
+$default-font: 'Nunito Sans', -apple-system, BlinkMacSystemFont, Helvetica,
+  Arial, sans-serif;
+
+$backdrop-z-index: 4;
+$snackbar-z-index: 3;
+
+/* Breakpoints */
+$breakpoints: (
+  'phone': 400,
+  'phone-wide': 480,
+  'phablet': 560,
+  'tablet-small': 640,
+  'tablet': 768,
+  'tablet-wide': 1024,
+  'desktop': 1248,
+  'desktop-wide': 1440,
+);

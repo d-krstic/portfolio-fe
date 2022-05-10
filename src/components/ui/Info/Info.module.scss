@@ -1,0 +1,45 @@
+@import '../../../mixins.scss';
+
+.Container {
+  height: 80vh;
+  max-width: 500px;
+  width: 100%;
+  min-width: 250px;
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-size: 20px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ImageDiv {
+  margin: 0 auto;
+}
+.Info {
+  padding: 20px;
+  overflow-y: scroll;
+}
+.MoreInfo {
+  padding: 20px;
+  & > ul {
+    list-style-type: square;
+  }
+}
+.Contacts {
+  margin: auto;
+}
+
+@include mq('tablet-small', max) {
+  .Container {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(7, auto);
+  }
+  .Info {
+    overflow-y: hidden;
+    height: fit-content;
+  }
+}

@@ -1,0 +1,17 @@
+@import '../../../mixins.scss';
+
+.Form {
+  margin: 30px;
+  & > .Input {
+    margin: 15px 0;
+    width: 100%;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: var(--background);
+  }
+}
+
+.Icon {
+  display: inline-flex;
+}

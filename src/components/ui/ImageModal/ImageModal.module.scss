@@ -1,0 +1,33 @@
+.Container {
+  background-color: white;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  display: grid;
+  grid-row: 1;
+  grid-column: 1;
+  & > img {
+    object-fit: contain;
+    grid-row: 1;
+    grid-column: 1;
+  }
+  & > button {
+    margin: 5px;
+    padding: 0;
+    max-width: 30px;
+    max-height: 30px;
+    grid-row: 1;
+    grid-column: 1;
+    background-color: transparent;
+    border: none;
+  }
+
+  .Icon {
+    transition: 0.2s;
+    font-size: 30px;
+    color: red;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

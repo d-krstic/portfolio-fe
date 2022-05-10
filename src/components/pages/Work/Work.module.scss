@@ -1,0 +1,14 @@
+@import '../../../mixins';
+
+.Content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: start;
+
+  @include mq('phablet', max) {
+    margin: 0;
+  }
+}

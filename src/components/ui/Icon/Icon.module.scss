@@ -1,0 +1,65 @@
+.Image {
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.Container {
+  display: inline;
+  position: relative;
+}
+
+.Tooltip {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  width: 60px;
+  opacity: 0;
+  transition: 1s;
+  transform-origin: top;
+  z-index: 9;
+  transition-property: opacity;
+  transition-property: transform;
+}
+
+.Show {
+  animation-name: show;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.Hide {
+  animation-name: hide;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+@keyframes hide {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+.Clickable {
+  cursor: pointer;
+}

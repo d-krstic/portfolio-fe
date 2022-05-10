@@ -1,0 +1,33 @@
+@import '../../../index.scss';
+
+.Menu {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+.Children {
+  padding-bottom: 40px;
+}
+
+.Content {
+  width: 80%;
+  margin: 50px auto 50px auto;
+  background-color: var(--background);
+  color: var(--text-primary);
+  border-radius: 6px;
+  border: 1px solid black;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+  & > h1 {
+    font-size: 40px;
+    color: inherit;
+    margin-bottom: 0;
+    padding: 20px;
+    box-shadow: 0 6px 20px -4px rgba(0, 0, 0, 0.4);
+  }
+  @include mq('phablet', max) {
+    width: 90%;
+    margin: 20px auto 30px auto;
+  }
+}

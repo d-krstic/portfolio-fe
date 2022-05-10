@@ -1,0 +1,19 @@
+@import './src/theme.scss';
+@import './src/mixins.scss';
+
+.SnackbarProvider {
+  position: fixed;
+  z-index: $snackbar-z-index;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include gap(1rem, 'top');
+}

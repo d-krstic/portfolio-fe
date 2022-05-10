@@ -1,0 +1,13 @@
+@import '../../../typography';
+@import '../../../theme';
+@import '../../../mixins';
+
+.Backdrop {
+  @include backdrop;
+  @include d-flex-a-center-j-center;
+}
+
+.BackdropAnimateIn {
+  visibility: visible;
+  opacity: 1;
+}

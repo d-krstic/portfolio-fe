@@ -1,0 +1,22 @@
+@import '../../../typography';
+@import '../../../theme';
+@import '../../../mixins';
+
+.Backdrop {
+  @include backdrop;
+  @include d-flex-a-center-j-center;
+  z-index: 10;
+}
+
+.BackdropAnimateIn {
+  visibility: visible;
+  opacity: 1;
+}
+
+.ModalContent {
+  margin: 1.5rem;
+  box-sizing: border-box;
+  /* height minus margin */
+  max-height: calc(100% - 3rem);
+  overflow: auto;
+}

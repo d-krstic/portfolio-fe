@@ -1,0 +1,59 @@
+@import '../../../mixins';
+
+.Container {
+  background-color: transparent;
+  color: var(--text-primary);
+  z-index: 5;
+  .ContainerDesktop {
+    background-color: var(--background);
+    color: inherit;
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .RightSide {
+      margin: auto 0 auto auto;
+      height: 100%;
+      display: flex;
+      .Toggle {
+        margin: auto 10px auto auto;
+        .Icon {
+          font-size: 20px;
+        }
+      }
+      .Logout {
+        margin: auto 10px auto auto;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .ContainerMobile {
+    display: none;
+  }
+
+  .MenuButton {
+    background-color: white;
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    &:hover {
+      background-color: rgb(240, 240, 240);
+    }
+    & > img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  @include mq('phablet', max) {
+    .ContainerDesktop {
+      display: none;
+    }
+    .ContainerMobile {
+      display: block;
+    }
+  }
+}

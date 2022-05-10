@@ -1,0 +1,61 @@
+@import 'theme';
+@import 'mixins';
+@import 'typography';
+
+body {
+  background: url('./assets/background.png') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: $default-font;
+  vertical-align: baseline;
+  height: fit-content;
+  width: 100%;
+  overflow-x: hidden;
+  &.Dark {
+    background: url('./assets/dark-background.jpg') no-repeat center center
+      fixed;
+  }
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1 {
+  margin: 0px;
+}
+
+:root {
+  --background: white;
+  --text-primary: black;
+  --shadow-color: black;
+}
+[data-theme='dark'] {
+  --background: #1c1c1c;
+  --text-primary: rgba(255, 255, 255, 0.87);
+  --shadow-color: white;
+}

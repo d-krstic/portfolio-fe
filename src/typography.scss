@@ -1,0 +1,130 @@
+@import 'mixins';
+
+//TYPOGRAPHY
+@mixin typography-display-1 {
+  @include font-size(96, 131);
+  font-weight: 300;
+  @include mq('tablet') {
+  }
+}
+@mixin typography-display-2 {
+  @include font-size(88, 120);
+  font-weight: 300;
+  @include mq('tablet') {
+  }
+}
+@mixin typography-display-3 {
+  @include font-size(72, 98);
+  font-weight: 300;
+  @include mq('tablet') {
+  }
+}
+@mixin typography-display-4 {
+  @include font-size(56, 76);
+  font-weight: 300;
+  @include mq('tablet') {
+  }
+}
+
+@mixin typography-heading-1 {
+  @include font-size(40, 55);
+  font-weight: 300;
+  @include mq('tablet') {
+  }
+}
+
+@mixin typography-heading-2 {
+  @include font-size(32, 44);
+  font-weight: 700;
+  @include mq('tablet') {
+  }
+}
+
+@mixin typography-heading-3 {
+  @include font-size(28, 38);
+  font-weight: 600;
+  @include mq('tablet') {
+  }
+}
+
+@mixin typography-heading-4 {
+  @include font-size(24, 33);
+  font-weight: 700;
+  @include mq('tablet') {
+  }
+}
+
+@mixin typography-heading-5 {
+  @include font-size(20, 27);
+  font-weight: 300;
+  @include mq('tablet') {
+  }
+}
+
+@mixin typography-heading-6 {
+  @include font-size(16, 22);
+  font-weight: 700;
+  @include mq('tablet') {
+  }
+}
+@mixin typography-paragraph-lead {
+  @include font-size(20, 24);
+  font-weight: 400;
+  @include mq('tablet') {
+  }
+}
+
+@mixin typography-paragraph {
+  @include font-size(16, 24);
+  font-weight: 400;
+  @include mq('tablet') {
+  }
+}
+
+@mixin typography-underlined {
+  @include font-size(16, 24);
+  font-weight: 300;
+  @include mq('tablet') {
+  }
+  text-decoration: underline;
+}
+
+@mixin typography-paragraph-small {
+  @include font-size(14, 21);
+  font-weight: 600;
+  @include mq('tablet') {
+  }
+}
+
+@mixin typography-paragraph-small-underlined {
+  @include typography-paragraph-small;
+  text-decoration: underline;
+}
+
+@mixin typography-delete {
+  @include font-size(16, 24);
+  font-weight: 300;
+  text-decoration: line-through;
+}
+
+@mixin typography-bold {
+  @include font-size(16, 24);
+  @include mq('tablet') {
+  }
+}
+@mixin typography-caption {
+  @include font-size(10, 14);
+  @include mq('tablet') {
+  }
+}
+
+@mixin typography-caption-1 {
+  @include font-size(12, 16);
+  @include mq('tablet') {
+  }
+}
+
+@mixin typography-caption-2 {
+  @include typography-caption-1;
+  font-weight: 700;
+}

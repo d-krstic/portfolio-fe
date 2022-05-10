@@ -1,0 +1,84 @@
+@import '../../../mixins.scss';
+
+.Container {
+  background-color: var(--background);
+  color: var(--text-primary);
+  position: relative;
+  & > .Form {
+    padding: 3%;
+    margin: 2%;
+    z-index: 9;
+    .Icon {
+      margin-right: 5px;
+    }
+  }
+  & > .Letter {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    & > img {
+      width: 300px;
+      height: 300px;
+    }
+    @include mq('phablet', max) {
+      transform: scale(0.6);
+    }
+  }
+}
+
+.Input {
+  margin: 15px 0;
+  width: 100%;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: var(--background);
+}
+
+.Button {
+  background-color: #3576de;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.Error {
+  border: 2px solid red;
+}
+
+.AnimationFly {
+  animation-name: fly;
+  animation-duration: 2s;
+  animation-delay: 0.4s;
+  animation-timing-function: ease-out;
+}
+@keyframes fly {
+  from {
+    right: 0px;
+    opacity: 1;
+  }
+  to {
+    right: -200%;
+    opacity: 0;
+  }
+}
+
+.AnimationFly2 {
+  animation-name: fly2;
+  animation-duration: 2s;
+  animation-delay: 0.4s;
+  animation-timing-function: ease-in;
+}
+@keyframes fly2 {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 200%;
+  }
+}
