@@ -1,12 +1,11 @@
 import Button from '@mui/material/Button';
 import classNames from 'classnames';
-import React, { FC, useRef, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { AiOutlineMail } from 'react-icons/ai';
 import { toast } from 'react-toastify';
 import { submitForm } from 'src/store/actions/contactActions';
 import { useAppDispatch } from 'src/store/app/hooks';
 
-import letter from '../../../assets/msg.png';
 import classes from './Form.module.scss';
 
 export interface FormProps {
@@ -22,7 +21,6 @@ export interface ContactForm {
 const Form: FC<FormProps> = ({ onClick }) => {
   const dispatch = useAppDispatch();
   const [valid, setValid] = useState(true);
-  const imgRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     eMail: '',
@@ -31,19 +29,12 @@ const Form: FC<FormProps> = ({ onClick }) => {
 
   const handleClick = () => {
     if (valid && formData.name && formData.eMail && formData.message) {
-      //adds class for animation and trigger parent
-      imgRef.current.classList.add(classes.AnimationFly);
       onClick();
       dispatch(submitForm(formData));
     } else {
       //creates error notification
       toast.error('Please fill the form correctly');
     }
-  };
-
-  const handleEnd = () => {
-    //removes animation class when animation is over
-    imgRef.current.classList.remove(classes.AnimationFly);
   };
 
   //checks if email is valid
@@ -58,9 +49,6 @@ const Form: FC<FormProps> = ({ onClick }) => {
 
   return (
     <div className={classes.Container}>
-      <div className={classes.Letter} ref={imgRef} onAnimationEnd={handleEnd}>
-        <img src={letter} alt="letter" />
-      </div>
       <div className={classes.Form}>
         <form>
           <input

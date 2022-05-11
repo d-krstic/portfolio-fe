@@ -29,7 +29,7 @@ const BlogPost: FC<BlogPostProps> = ({ post }) => {
       </div>
 
       {post.tags?.map((tag, i) => (
-        <Chip className={classes.Chip} key={i} label={tag} />
+        <Chip className={classes.Chip} key={i} label={tag} variant="outlined" />
       ))}
       <p>{post.content}</p>
       <span>{post.date}</span>

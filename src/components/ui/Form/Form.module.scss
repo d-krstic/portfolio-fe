@@ -6,6 +6,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 100%;
+  z-index: 2;
   & > .Form {
     grid-row-start: 1;
     grid-column-start: 1;
@@ -14,24 +15,6 @@
     z-index: 5;
     .Icon {
       margin-right: 5px;
-    }
-  }
-  & > .Letter {
-    grid-row-start: 1;
-    grid-column-start: 1;
-    z-index: -1;
-    width: 200px;
-    height: 200px;
-    & > img {
-      width: 200px;
-      height: 200px;
-    }
-
-    @include mq('tablet-wide', max) {
-      transform: scale(0.7);
-    }
-    @include mq('phablet', max) {
-      transform: scale(0.6);
     }
   }
 }
@@ -60,36 +43,4 @@
 
 .Error {
   border: 2px solid red;
-}
-
-.AnimationFly {
-  animation-name: fly;
-  animation-duration: 2s;
-  animation-delay: 0.4s;
-  animation-timing-function: ease-out;
-}
-@keyframes fly {
-  from {
-    transform: translateX(0px);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(200px);
-    opacity: 0;
-  }
-}
-
-.AnimationFly2 {
-  animation-name: fly2;
-  animation-duration: 2s;
-  animation-delay: 0.4s;
-  animation-timing-function: ease-in;
-}
-@keyframes fly2 {
-  from {
-    top: 0px;
-  }
-  to {
-    top: 200%;
-  }
 }
