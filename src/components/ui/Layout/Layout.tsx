@@ -13,7 +13,6 @@ const Layout: FC = ({ children }) => {
   const location = useLocation();
 
   useEffect(() => {
-    console.log('called');
     if (dark) {
       document.body.classList.add('Dark');
       localStorage.setItem('theme', 'dark');

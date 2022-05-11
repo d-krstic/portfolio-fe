@@ -1,6 +1,6 @@
 import { Divider } from '@mui/material';
 import Switch from '@mui/material/Switch';
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import {
   AiOutlineBulb,
@@ -23,8 +23,12 @@ export interface MenuProps {
 const Menu: FC<MenuProps> = ({ onClick }) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const [checked, setChecked] = useState(
+    localStorage.getItem('theme') === 'dark' ? true : false
+  );
 
   const handleClick = () => {
+    setChecked(!checked);
     onClick();
   };
 
@@ -46,12 +50,7 @@ const Menu: FC<MenuProps> = ({ onClick }) => {
         <div className={classes.RightSide}>
           <div className={classes.Toggle}>
             <AiOutlineBulb className={classes.Icon} />
-            <Switch
-              onClick={handleClick}
-              defaultChecked={
-                localStorage.getItem('theme') === 'dark' ? true : false
-              }
-            />
+            <Switch onClick={handleClick} checked={checked} />
           </div>
 
           {localStorage.getItem('apiKey') !== null && (
@@ -94,12 +93,7 @@ const Menu: FC<MenuProps> = ({ onClick }) => {
             <Dropdown.Item>
               <div className={classes.Toggle}>
                 <AiOutlineBulb className={classes.Icon} />
-                <Switch
-                  onClick={handleClick}
-                  defaultChecked={
-                    localStorage.getItem('theme') === 'dark' ? true : false
-                  }
-                />
+                <Switch onClick={handleClick} checked={checked} />
               </div>
             </Dropdown.Item>
           </Dropdown.Menu>

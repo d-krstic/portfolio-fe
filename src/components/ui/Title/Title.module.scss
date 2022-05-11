@@ -1,5 +1,17 @@
 @import '../../../mixins';
 
 .Title {
-  margin-left: 40px;
+  & > h1 {
+    text-align: center;
+    font-size: 100px;
+  }
+  @include mq('phablet', max) {
+  }
+}
+
+.Icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: stretch;
 }

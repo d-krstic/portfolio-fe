@@ -28,12 +28,7 @@ const Home: FC = () => {
   return (
     <div className={classes.Container} id="cont">
       <div className={classes.Title}>
-        <Title
-          title="Denis Krstic"
-          fSize="120px"
-          fColor="white"
-          icons={icons}
-        />
+        <Title title="Denis Krstic" fColor="white" icons={icons} />
       </div>
       <div className={classes.Info}>
         <Info />
