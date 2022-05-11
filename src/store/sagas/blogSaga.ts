@@ -19,8 +19,9 @@ export function* BlogGetAllSaga(
   yield put(setGlobalLoading(true));
   try {
     //post req na API
+    console.log(`${process.env.REACT_APP_API_URL}/blogs`);
     const response = (yield instance.get(
-      'https://dkrstic-portfolio-be.herokuapp.com/blogs'
+      `${process.env.REACT_APP_API_URL}/blogs`
     )) as AxiosResponse<BlogPost[]>;
 
     yield put(setBlogs(response.data));
@@ -37,7 +38,7 @@ export function* BlogGetSaga(action: ReturnType<typeof getBlog>): Generator {
   try {
     //post req na API
     const response = (yield instance.get(
-      `https://dkrstic-portfolio-be.herokuapp.com/blogs/${action.payload.id}`
+      `${process.env.REACT_APP_API_URL}/${action.payload.id}`
     )) as AxiosResponse<BlogPost>;
 
     yield put(setBlog(response.data));
@@ -56,7 +57,7 @@ export function* BlogFormSaga(
   try {
     //post req na API
     (yield instance.post(
-      'https://dkrstic-portfolio-be.herokuapp.com/blogs',
+      `${process.env.REACT_APP_API_URL}/blogs`,
       {
         ...action.payload,
       },

@@ -8,7 +8,6 @@ import {
   AiOutlinePoweroff,
 } from 'react-icons/ai';
 import { useNavigate } from 'react-router';
-import { Link } from 'react-router-dom';
 import { routes } from 'src/routes';
 import { logout } from 'src/store/actions/authActions';
 import { useAppDispatch } from 'src/store/app/hooks';
@@ -35,6 +34,10 @@ const Menu: FC<MenuProps> = ({ onClick }) => {
   const handleLogout = () => {
     dispatch(logout());
     navigate(routes.HOME);
+  };
+
+  const handleNavigate = (url: string) => {
+    navigate(url);
   };
 
   return (
@@ -71,23 +74,35 @@ const Menu: FC<MenuProps> = ({ onClick }) => {
             <AiOutlineMenu className={classes.Icon} />
           </Dropdown.Toggle>
           <Dropdown.Menu className={classes.DropdownMenu}>
-            <Dropdown.Item className={classes.Link}>
-              <Link to={routes.HOME}>HOME</Link>
+            <Dropdown.Item onClick={() => handleNavigate(routes.HOME)}>
+              <div className={classes.Link}>
+                <span>HOME</span>
+              </div>
             </Dropdown.Item>
-            <Dropdown.Item className={classes.Link}>
-              <Link to={routes.ABOUT}>ABOUT</Link>
+            <Dropdown.Item onClick={() => handleNavigate(routes.ABOUT)}>
+              <div className={classes.Link}>
+                <span>ABOUT</span>
+              </div>
             </Dropdown.Item>
-            <Dropdown.Item className={classes.Link}>
-              <Link to={routes.EDUCATION}>EDUCATION</Link>
+            <Dropdown.Item onClick={() => handleNavigate(routes.EDUCATION)}>
+              <div className={classes.Link}>
+                <span>EDUCATION</span>
+              </div>
             </Dropdown.Item>
-            <Dropdown.Item className={classes.Link}>
-              <Link to={routes.WORK}>WORK</Link>
+            <Dropdown.Item onClick={() => handleNavigate(routes.WORK)}>
+              <div className={classes.Link}>
+                <span>WORK</span>
+              </div>
             </Dropdown.Item>
-            <Dropdown.Item className={classes.Link}>
-              <Link to={routes.BLOG}>BLOG</Link>
+            <Dropdown.Item onClick={() => handleNavigate(routes.BLOG)}>
+              <div className={classes.Link}>
+                <span>BLOG</span>
+              </div>
             </Dropdown.Item>
-            <Dropdown.Item className={classes.Link}>
-              <Link to={routes.CONTACT}>CONTACT</Link>
+            <Dropdown.Item onClick={() => handleNavigate(routes.CONTACT)}>
+              <div className={classes.Link}>
+                <span>CONTACT</span>
+              </div>
             </Dropdown.Item>
             <Divider className={classes.Divider} />
             <Dropdown.Item>

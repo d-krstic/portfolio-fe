@@ -2,23 +2,24 @@ import React, { FC, useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import { ToastContainer } from 'react-toastify';
 import { routes } from 'src/routes';
+import { Theme } from 'src/store/models/Theme';
 
 import Menu from '../Menu/Menu';
 import classes from './Layout.module.scss';
 
 const Layout: FC = ({ children }) => {
   const [dark, setDark] = useState(
-    localStorage.getItem('theme') === 'dark' ? true : false
+    localStorage.getItem('theme') === Theme.DARK ? true : false
   );
   const location = useLocation();
 
   useEffect(() => {
     if (dark) {
       document.body.classList.add('Dark');
-      localStorage.setItem('theme', 'dark');
+      localStorage.setItem('theme', Theme.DARK);
     } else {
       document.body.classList.remove('Dark');
-      localStorage.setItem('theme', 'light');
+      localStorage.setItem('theme', Theme.LIGHT);
     }
   }, [dark]);
 

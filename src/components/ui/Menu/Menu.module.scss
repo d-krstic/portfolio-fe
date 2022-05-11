@@ -40,8 +40,8 @@
 
     .Link {
       padding: 20px;
-      background-color: var(--background);
-      & > a {
+      background-color: transparent;
+      & > span {
         font-weight: bold;
         text-decoration: none;
         margin: 0 auto 0 auto;
@@ -56,6 +56,10 @@
 
     .DropdownMenu {
       background-color: var(--background);
+      z-index: 99;
+      & > a:hover {
+        background-color: inherit;
+      }
     }
   }
 

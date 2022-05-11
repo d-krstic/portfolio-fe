@@ -13,7 +13,7 @@ export function* ContactFormSaga(
   try {
     //post req na API
     (yield instance.post(
-      'https://dkrstic-portfolio-be.herokuapp.com/contact',
+      `${process.env.REACT_APP_API_URL}/contact`,
       {
         ...action.payload,
       },

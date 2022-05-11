@@ -11,7 +11,7 @@
     grid-column-start: 1;
     padding: 3%;
     margin: 2%;
-    z-index: 9;
+    z-index: 5;
     .Icon {
       margin-right: 5px;
     }
@@ -38,7 +38,8 @@
   margin: 15px 0;
   width: 100%;
   font-size: 20px;
-  border: 1px solid black;
+  border: 1px solid var(--text-primary);
+  color: var(--text-primary);
   border-radius: 4px;
   background-color: var(--background);
 }

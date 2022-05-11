@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC, useRef } from 'react';
 import { AiOutlineCloseSquare } from 'react-icons/ai';
 import { Modal } from 'src/store/models/Modal';
 
@@ -10,20 +10,6 @@ export interface ImageModalProps {
 
 const ImageModal: FC<ImageModalProps> = ({ modal }) => {
   const imgRef = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    if (imgRef?.current.width > imgRef?.current.height) {
-      //horizontal
-      imgRef.current.style.maxWidth = '100%';
-      imgRef.current.style.height = 'auto';
-    } else {
-      //vertical
-      imgRef.current.style.maxHeight = '100%';
-      imgRef.current.style.width = 'auto';
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <div className={classes.Container}>

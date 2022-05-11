@@ -15,8 +15,8 @@
 
 .ModalContent {
   margin: 1.5rem;
-  box-sizing: border-box;
-  /* height minus margin */
-  max-height: calc(100% - 3rem);
-  overflow: auto;
+  display: block;
+  max-height: 80%;
+  max-width: 80%;
+  object-fit: contain;
 }

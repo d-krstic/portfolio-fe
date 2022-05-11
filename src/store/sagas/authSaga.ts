@@ -13,7 +13,7 @@ export function* AuthLoginSaga(action: ReturnType<typeof login>): Generator {
   yield put(setGlobalLoading(true));
   try {
     const response = (yield instance.post(
-      'https://dkrstic-portfolio-be.herokuapp.com/login',
+      `${process.env.REACT_APP_API_URL}/login`,
       {
         ...action.payload,
       },
