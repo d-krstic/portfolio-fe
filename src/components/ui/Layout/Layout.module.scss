@@ -1,5 +1,15 @@
 @import '../../../index.scss';
 
+.Background {
+  background: url('../../../assets/background.png') no-repeat center center
+    fixed;
+  background-size: cover;
+  &.Dark {
+    background: url('../../../assets/dark-background.jpg') no-repeat center
+      center fixed;
+  }
+}
+
 .Menu {
   position: sticky;
   top: 0;

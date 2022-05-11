@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router';
 import { ToastContainer } from 'react-toastify';
 import { routes } from 'src/routes';
@@ -8,6 +8,7 @@ import Menu from '../Menu/Menu';
 import classes from './Layout.module.scss';
 
 const Layout: FC = ({ children }) => {
+  const divRef = useRef<HTMLDivElement>(null);
   const [dark, setDark] = useState(
     localStorage.getItem('theme') === Theme.DARK ? true : false
   );
@@ -15,10 +16,10 @@ const Layout: FC = ({ children }) => {
 
   useEffect(() => {
     if (dark) {
-      document.body.classList.add('Dark');
+      divRef.current.classList.add(classes.Dark);
       localStorage.setItem('theme', Theme.DARK);
     } else {
-      document.body.classList.remove('Dark');
+      divRef.current.classList.remove(classes.Dark);
       localStorage.setItem('theme', Theme.LIGHT);
     }
   }, [dark]);
@@ -28,7 +29,11 @@ const Layout: FC = ({ children }) => {
   };
 
   return (
-    <div data-theme={dark ? 'dark' : 'light'}>
+    <div
+      data-theme={dark ? Theme.DARK : Theme.LIGHT}
+      className={classes.Background}
+      ref={divRef}
+    >
       <div className={classes.Menu}>
         <Menu onClick={handleClick} />
       </div>

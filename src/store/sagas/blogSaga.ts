@@ -19,7 +19,6 @@ export function* BlogGetAllSaga(
   yield put(setGlobalLoading(true));
   try {
     //post req na API
-    console.log(`${process.env.REACT_APP_API_URL}/blogs`);
     const response = (yield instance.get(
       `${process.env.REACT_APP_API_URL}/blogs`
     )) as AxiosResponse<BlogPost[]>;
