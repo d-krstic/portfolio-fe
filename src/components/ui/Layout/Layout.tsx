@@ -7,14 +7,19 @@ import Menu from '../Menu/Menu';
 import classes from './Layout.module.scss';
 
 const Layout: FC = ({ children }) => {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(
+    localStorage.getItem('theme') === 'dark' ? true : false
+  );
   const location = useLocation();
 
   useEffect(() => {
+    console.log('called');
     if (dark) {
       document.body.classList.add('Dark');
+      localStorage.setItem('theme', 'dark');
     } else {
       document.body.classList.remove('Dark');
+      localStorage.setItem('theme', 'light');
     }
   }, [dark]);
 

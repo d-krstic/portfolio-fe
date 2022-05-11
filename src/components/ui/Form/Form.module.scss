@@ -4,7 +4,11 @@
   background-color: var(--background);
   color: var(--text-primary);
   position: relative;
+  display: grid;
+  grid-template-columns: 100%;
   & > .Form {
+    grid-row-start: 1;
+    grid-column-start: 1;
     padding: 3%;
     margin: 2%;
     z-index: 9;
@@ -13,12 +17,16 @@
     }
   }
   & > .Letter {
-    position: absolute;
+    grid-row-start: 1;
+    grid-column-start: 1;
     z-index: -1;
-    right: 0;
     & > img {
       width: 300px;
       height: 300px;
+    }
+
+    @include mq('tablet-wide', max) {
+      transform: scale(0.7);
     }
     @include mq('phablet', max) {
       transform: scale(0.6);

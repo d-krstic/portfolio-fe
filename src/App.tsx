@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 
 import Router from './components/pages/Router/Router';
 import Layout from './components/ui/Layout/Layout';
@@ -9,6 +9,11 @@ import useGaTracker from './utils/googleAnalytics';
 
 const App: FC = () => {
   useGaTracker();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    // eslint-disable-next-line
+  }, [window.location.pathname, window.location.search]);
 
   return (
     <LoadingProvider>

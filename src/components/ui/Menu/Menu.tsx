@@ -1,13 +1,18 @@
+import { Divider } from '@mui/material';
 import Switch from '@mui/material/Switch';
 import React, { FC } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { AiOutlineBulb, AiOutlinePoweroff } from 'react-icons/ai';
+import {
+  AiOutlineBulb,
+  AiOutlineMenu,
+  AiOutlinePoweroff,
+} from 'react-icons/ai';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 import { routes } from 'src/routes';
 import { logout } from 'src/store/actions/authActions';
 import { useAppDispatch } from 'src/store/app/hooks';
 
-import menuIcon from '../../../assets/menu.png';
 import MenuCell from '../MenuCell/MenuCell';
 import classes from './Menu.module.scss';
 
@@ -41,7 +46,12 @@ const Menu: FC<MenuProps> = ({ onClick }) => {
         <div className={classes.RightSide}>
           <div className={classes.Toggle}>
             <AiOutlineBulb className={classes.Icon} />
-            <Switch onClick={handleClick} />
+            <Switch
+              onClick={handleClick}
+              defaultChecked={
+                localStorage.getItem('theme') === 'dark' ? true : false
+              }
+            />
           </div>
 
           {localStorage.getItem('apiKey') !== null && (
@@ -59,26 +69,38 @@ const Menu: FC<MenuProps> = ({ onClick }) => {
             variant="secondary"
             className={classes.MenuButton}
           >
-            <img src={menuIcon} alt="menu" />
+            <AiOutlineMenu className={classes.Icon} />
           </Dropdown.Toggle>
-          <Dropdown.Menu className={classes.Test}>
-            <Dropdown.Item>
-              <MenuCell name="Home" url={routes.HOME} />
+          <Dropdown.Menu className={classes.DropdownMenu}>
+            <Dropdown.Item className={classes.Link}>
+              <Link to={routes.HOME}>HOME</Link>
             </Dropdown.Item>
-            <Dropdown.Item>
-              <MenuCell name="About" url={routes.ABOUT} />
+            <Dropdown.Item className={classes.Link}>
+              <Link to={routes.ABOUT}>ABOUT</Link>
             </Dropdown.Item>
-            <Dropdown.Item>
-              <MenuCell name="Education" url={routes.EDUCATION} />
+            <Dropdown.Item className={classes.Link}>
+              <Link to={routes.EDUCATION}>EDUCATION</Link>
             </Dropdown.Item>
-            <Dropdown.Item>
-              <MenuCell name="Work" url={routes.WORK} />
+            <Dropdown.Item className={classes.Link}>
+              <Link to={routes.WORK}>WORK</Link>
             </Dropdown.Item>
-            <Dropdown.Item>
-              <MenuCell name="Blog" url={routes.BLOG} />
+            <Dropdown.Item className={classes.Link}>
+              <Link to={routes.BLOG}>BLOG</Link>
             </Dropdown.Item>
+            <Dropdown.Item className={classes.Link}>
+              <Link to={routes.CONTACT}>CONTACT</Link>
+            </Dropdown.Item>
+            <Divider className={classes.Divider} />
             <Dropdown.Item>
-              <MenuCell name="Contacts" url={routes.CONTACT} />
+              <div className={classes.Toggle}>
+                <AiOutlineBulb className={classes.Icon} />
+                <Switch
+                  onClick={handleClick}
+                  defaultChecked={
+                    localStorage.getItem('theme') === 'dark' ? true : false
+                  }
+                />
+              </div>
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>

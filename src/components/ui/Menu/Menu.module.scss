@@ -31,21 +31,40 @@
 
   .ContainerMobile {
     display: none;
+    background-color: transparent;
+
+    .Icon {
+      color: var(--text-primary);
+      font-size: 40px;
+    }
+
+    .Link {
+      padding: 20px;
+      background-color: var(--background);
+      & > a {
+        font-weight: bold;
+        text-decoration: none;
+        margin: 0 auto 0 auto;
+        color: var(--text-primary);
+        font-size: 25px;
+      }
+    }
+
+    .Divider {
+      color: var(--text-primary);
+    }
+
+    .DropdownMenu {
+      background-color: var(--background);
+    }
   }
 
   .MenuButton {
-    background-color: white;
+    background-color: var(--background);
     border: 1px solid black;
     width: 60px;
     height: 60px;
     padding: 0;
-    &:hover {
-      background-color: rgb(240, 240, 240);
-    }
-    & > img {
-      width: 30px;
-      height: 30px;
-    }
   }
 
   @include mq('phablet', max) {
