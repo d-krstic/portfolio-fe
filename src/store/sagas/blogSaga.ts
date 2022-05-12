@@ -37,7 +37,7 @@ export function* BlogGetSaga(action: ReturnType<typeof getBlog>): Generator {
   try {
     //post req na API
     const response = (yield instance.get(
-      `${process.env.REACT_APP_API_URL}/${action.payload.id}`
+      `${process.env.REACT_APP_API_URL}/blogs/${action.payload.id}`
     )) as AxiosResponse<BlogPost>;
 
     yield put(setBlog(response.data));
