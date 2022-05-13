@@ -18,6 +18,7 @@ const Paragraph: FC<ParagraphProps> = ({ images, text, id, title }) => {
   const controller = new ScrollMagic.Controller();
 
   const cssClasses = classNames(
+    { [classes.NoImage]: images.length === 0 },
     { [classes.OneImage]: images.length === 1 },
     { [classes.TwoImage]: images.length === 2 },
     { [classes.Scroll]: id }

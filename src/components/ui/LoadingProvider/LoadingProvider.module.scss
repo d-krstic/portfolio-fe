@@ -5,6 +5,7 @@
 .Backdrop {
   @include backdrop;
   @include d-flex-a-center-j-center;
+  z-index: 11;
 }
 
 .BackdropAnimateIn {

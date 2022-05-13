@@ -21,7 +21,7 @@
 }
 .Info {
   padding: 20px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .MoreInfo {
   padding: 20px;
@@ -40,6 +40,6 @@
   }
   .Info {
     overflow-y: hidden;
-    height: fit-content;
+    height: auto;
   }
 }

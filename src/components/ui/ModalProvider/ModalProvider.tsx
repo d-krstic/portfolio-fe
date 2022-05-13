@@ -1,5 +1,6 @@
 import classNames from 'classnames';
-import React, { FC, ReactNode } from 'react';
+import disableScroll from 'disable-scroll';
+import React, { FC, ReactNode, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { removeModal } from 'src/store/features/globalSlice';
 import { ModalType } from 'src/store/models/Modal';
@@ -37,12 +38,20 @@ const ModalProvider: FC<ModalProviderProps> = ({
     switch (modal?.type) {
       case ModalType.SUCCESS:
         return <>Success Modal</>;
-        case ModalType.IMAGE:
-          return <ImageModal modal={modal} />
+      case ModalType.IMAGE:
+        return <ImageModal modal={modal} />;
       default:
         return null;
     }
   };
+
+  useEffect(() => {
+    if (open) {
+      disableScroll.on();
+    } else {
+      disableScroll.off();
+    }
+  }, [open]);
 
   return (
     <>
