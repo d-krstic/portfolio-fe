@@ -34,6 +34,9 @@
 }
 
 @include mq('tablet-small', max) {
+  .Container {
+    height: fit-content;
+  }
   .Info {
     overflow-y: visible;
     height: auto;
