@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { FC, useRef } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 
 import classes from './Icon.module.scss';
 
@@ -14,7 +14,7 @@ const Icon: FC<IconProps> = ({ src, name, url }) => {
   const tooltipRef = useRef<HTMLDivElement>(null);
   const cssClasses = classNames(classes.Image, { [classes.Clickable]: url });
 
-  const handleMoouseOff = () => {
+  const handleMouseOff = () => {
     if (tooltipRef?.current?.style && imgRef.current) {
       tooltipRef.current.classList.remove(classes.Show);
       tooltipRef.current.classList.add(classes.Hide);
@@ -39,6 +39,17 @@ const Icon: FC<IconProps> = ({ src, name, url }) => {
     url && window.open(url);
   };
 
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  });
+
+  const onScroll = () => {
+    handleMouseOff();
+  };
+
   return (
     <div className={classes.Container}>
       <img
@@ -46,9 +57,8 @@ const Icon: FC<IconProps> = ({ src, name, url }) => {
         ref={imgRef}
         alt="icon"
         className={cssClasses}
-        onMouseLeave={handleMoouseOff}
+        onMouseLeave={handleMouseOff}
         onMouseEnter={handleMouseOn}
-        onScroll={handleMoouseOff}
         onClick={handleClick}
       />
 
