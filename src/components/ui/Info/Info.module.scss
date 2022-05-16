@@ -34,11 +34,8 @@
 }
 
 @include mq('tablet-small', max) {
-  .Container {
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(7, auto);
-  }
   .Info {
+    overflow-y: auto;
     height: auto;
   }
 }
