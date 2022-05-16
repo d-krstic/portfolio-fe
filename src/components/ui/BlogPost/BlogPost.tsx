@@ -32,7 +32,7 @@ const BlogPost: FC<BlogPostProps> = ({ post }) => {
         <Chip className={classes.Chip} key={i} label={tag} variant="outlined" />
       ))}
       <p>{post.content}</p>
-      <span>{post.date}</span>
+      <span>Posted at: {post.date.substring(0, 10)}</span>
       <Divider />
     </div>
   );
