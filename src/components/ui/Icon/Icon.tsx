@@ -44,7 +44,8 @@ const Icon: FC<IconProps> = ({ src, name, url }) => {
     return () => {
       window.removeEventListener('scroll', onScroll);
     };
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const onScroll = () => {
     handleMouseOff();
