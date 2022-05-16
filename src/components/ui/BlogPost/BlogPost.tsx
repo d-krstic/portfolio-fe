@@ -6,6 +6,7 @@ import { AiOutlineRight } from 'react-icons/ai';
 import { useNavigate } from 'react-router';
 import { routes } from 'src/routes';
 import { BlogPost as bPost } from 'src/store/models/BlogPost';
+import { Theme } from 'src/store/models/Theme';
 
 import classes from './BlogPost.module.scss';
 
@@ -29,7 +30,14 @@ const BlogPost: FC<BlogPostProps> = ({ post }) => {
       </div>
 
       {post.tags?.map((tag, i) => (
-        <Chip className={classes.Chip} key={i} label={tag} variant="outlined" />
+        <Chip
+          className={classes.Chip}
+          key={i}
+          label={tag}
+          variant={
+            localStorage.getItem('theme') === Theme.DARK ? 'outlined' : 'filled'
+          }
+        />
       ))}
       <p>{post.content}</p>
       <span>Posted at: {post.date.substring(0, 10)}</span>

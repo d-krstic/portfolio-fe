@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router';
 import { routes } from 'src/routes';
 import { getBlog } from 'src/store/actions/blogActions';
 import { useAppDispatch, useAppSelector } from 'src/store/app/hooks';
+import { Theme } from 'src/store/models/Theme';
 
 import classes from './BlogDetailed.module.scss';
 
@@ -41,11 +42,20 @@ const BlogDetailed: FC = () => {
 
         <h2>{blog?.title}</h2>
         {blog?.tags?.map((tag, i) => (
-          <Chip className={classes.Chip} key={i} label={tag} />
+          <Chip
+            className={classes.Chip}
+            key={i}
+            label={tag}
+            variant={
+              localStorage.getItem('theme') === Theme.DARK
+                ? 'outlined'
+                : 'filled'
+            }
+          />
         ))}
         <p>{blog?.content}</p>
         <br />
-        <p>{blog?.date} ~ Denis</p>
+        <p>{blog?.date.substring(0, 10)} ~ Denis</p>
       </div>
     </>
   );
