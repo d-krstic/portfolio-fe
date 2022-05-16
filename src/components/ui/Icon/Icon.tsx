@@ -48,7 +48,7 @@ const Icon: FC<IconProps> = ({ src, name, url }) => {
         className={cssClasses}
         onMouseLeave={handleMoouseOff}
         onMouseEnter={handleMouseOn}
-        onTouchCancel={handleMoouseOff}
+        onScroll={handleMoouseOff}
         onClick={handleClick}
       />
 
