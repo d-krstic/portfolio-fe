@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import disableScroll from 'disable-scroll';
 import React, { FC, ReactNode, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { removeModal } from 'src/store/features/globalSlice';
@@ -47,9 +46,9 @@ const ModalProvider: FC<ModalProviderProps> = ({
 
   useEffect(() => {
     if (open) {
-      disableScroll.on();
+      document.body.style.overflow = 'hidden';
     } else {
-      disableScroll.off();
+      document.body.style.overflow = 'auto';
     }
   }, [open]);
 
