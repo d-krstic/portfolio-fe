@@ -1,10 +1,10 @@
 import classNames from 'classnames';
+import { motion } from 'framer-motion';
 import React, { FC } from 'react';
 import { createPortal } from 'react-dom';
 
 import { useAppSelector } from '../../../store/app/hooks';
 import useMountTransition from '../../../utils/useMountTransition';
-import ProgressIndicator from '../ProgressIndicator/ProgressIndicator';
 import classes from './LoadingProvider.module.scss';
 
 interface LoadingProviderProps {
@@ -36,7 +36,21 @@ const LoadingProvider: FC<LoadingProviderProps> = ({
               [classes.BackdropAnimateIn]: loading && shouldRender,
             })}
           >
-            <ProgressIndicator type="indeterminate" />
+            <motion.div
+              className={classes.Shape}
+              animate={{
+                scale: [1, 1.5, 1.5, 1, 1],
+                rotate: [0, 0, 270, 270, 0],
+                borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+              }}
+              transition={{
+                duration: 3,
+                ease: 'easeInOut',
+                times: [0, 0.2, 0.5, 0.8, 1],
+                repeat: Infinity,
+                repeatDelay: 0,
+              }}
+            />
           </div>,
           document.body
         )}
