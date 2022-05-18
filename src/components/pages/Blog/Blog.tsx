@@ -1,4 +1,5 @@
 import React, { FC, useEffect } from 'react';
+import ReactGA from 'react-ga4';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { useNavigate } from 'react-router';
 import BlogPost from 'src/components/ui/BlogPost/BlogPost';
@@ -23,6 +24,7 @@ const Blog: FC = () => {
     navigate(routes.BLOG_SUBMIT);
   };
 
+  ReactGA.send({ hitType: 'pageview', page: window.location.pathname });
   return (
     <>
       <h1>

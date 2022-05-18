@@ -1,5 +1,6 @@
 import Divider from '@mui/material/Divider';
 import React, { FC } from 'react';
+import ReactGA from 'react-ga4';
 import Paragraph from 'src/components/ui/Paragraph/Paragraph';
 
 import feriImg1 from '../../../assets/8.png';
@@ -13,6 +14,7 @@ import galleryImg5 from '../../../assets/15.png';
 import classes from './Education.module.scss';
 
 const Education: FC = () => {
+  ReactGA.send({ hitType: 'pageview', page: window.location.pathname });
   return (
     <>
       <h1>Education</h1>

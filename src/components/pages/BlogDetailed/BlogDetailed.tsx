@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button';
 import Chip from '@mui/material/Chip';
 import React, { FC, useEffect } from 'react';
+import ReactGA from 'react-ga4';
 import { AiOutlineLeft } from 'react-icons/ai';
 import { useNavigate, useParams } from 'react-router';
 import { routes } from 'src/routes';
@@ -26,6 +27,7 @@ const BlogDetailed: FC = () => {
     navigate(routes.BLOG);
   };
 
+  ReactGA.send({ hitType: 'pageview', page: window.location.pathname });
   return (
     <>
       <div className={classes.Content}>

@@ -1,4 +1,5 @@
 import React, { FC, useRef } from 'react';
+import ReactGA from 'react-ga4';
 import Contacts from 'src/components/ui/Contacts/Contacts';
 import Form from 'src/components/ui/Form/Form';
 import Paragraph from 'src/components/ui/Paragraph/Paragraph';
@@ -17,6 +18,7 @@ const Contact: FC = () => {
     divRef.current.classList.remove(classes.AnimationBounce);
   };
 
+  ReactGA.send({ hitType: 'pageview', page: window.location.pathname });
   return (
     <div className={classes.Grid}>
       <div className={classes.Left}>

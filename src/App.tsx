@@ -1,4 +1,5 @@
 import React, { FC, useEffect } from 'react';
+import ReactGA from 'react-ga4';
 
 import Router from './components/pages/Router/Router';
 import Layout from './components/ui/Layout/Layout';
@@ -9,6 +10,8 @@ import useGaTracker from './utils/googleAnalytics';
 
 const App: FC = () => {
   useGaTracker();
+
+  ReactGA.initialize('G-J9W9CV59NT');
 
   useEffect(() => {
     window.scrollTo(0, 0);
