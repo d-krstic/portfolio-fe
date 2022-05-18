@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import ReactGA from 'react-ga4';
 import Info from 'src/components/ui/Info/Info';
 import Title from 'src/components/ui/Title/Title';
 import { Icon } from 'src/store/models/Icon';
@@ -26,7 +25,6 @@ const Home: FC = () => {
     { src: tsIcon, name: ':(' },
   ];
 
-  ReactGA.send({ hitType: 'pageview', page: window.location.pathname });
   return (
     <div className={classes.Container} id="cont">
       <div className={classes.Title}>

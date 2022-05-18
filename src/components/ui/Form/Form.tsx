@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button';
 import classNames from 'classnames';
 import React, { FC, useState } from 'react';
+import ReactGA from 'react-ga4';
 import { AiOutlineMail } from 'react-icons/ai';
 import { toast } from 'react-toastify';
 import { submitForm } from 'src/store/actions/contactActions';
@@ -29,6 +30,12 @@ const Form: FC<FormProps> = ({ onClick }) => {
 
   const handleClick = () => {
     if (valid && formData.name && formData.eMail && formData.message) {
+      ReactGA.event({
+        category: 'CV events',
+        action: 'contacted with form',
+        label: 'send email',
+      });
+
       onClick();
       dispatch(submitForm(formData));
     } else {

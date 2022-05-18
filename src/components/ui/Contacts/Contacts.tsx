@@ -1,6 +1,11 @@
 import classNames from 'classnames';
 import React, { FC } from 'react';
-import { AiFillFacebook, AiFillInstagram, AiFillTwitterSquare } from "react-icons/ai";
+import ReactGA from 'react-ga4';
+import {
+  AiFillFacebook,
+  AiFillInstagram,
+  AiFillTwitterSquare,
+} from 'react-icons/ai';
 
 import classes from './Contacts.module.scss';
 
@@ -15,6 +20,12 @@ const Contacts: FC = () => {
   };
 
   const handleClick = (url: string) => {
+    ReactGA.event({
+      category: 'CV events',
+      action: 'opened socials link',
+      label: url,
+    });
+
     window.open(url);
   };
 

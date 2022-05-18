@@ -1,6 +1,5 @@
 import Button from '@mui/material/Button';
 import React, { FC } from 'react';
-import ReactGA from 'react-ga4';
 import { AiOutlineLeft } from 'react-icons/ai';
 import { useNavigate, useParams } from 'react-router';
 import { routes } from 'src/routes';
@@ -19,7 +18,6 @@ const WorkDetailed: FC = () => {
     navigate(routes.WORK);
   };
 
-  ReactGA.send({ hitType: 'pageview', page: window.location.pathname });
   return (
     <>
       <div className={classes.Content}>

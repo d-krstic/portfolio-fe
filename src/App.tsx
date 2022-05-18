@@ -18,6 +18,11 @@ const App: FC = () => {
     // eslint-disable-next-line
   }, [window.location.pathname, window.location.search]);
 
+  useEffect(() => {
+    ReactGA.send({ hitType: 'pageview', page: window.location.pathname });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [window.location.pathname]);
+
   return (
     <LoadingProvider>
       <ModalProvider>
